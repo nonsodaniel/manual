@@ -46,7 +46,7 @@ const Footer = () => {
             <h6 className="text-gray-800 font-medium mb-2">PRODUCT</h6>
             <ul className="text-sm">
               {footerProductList.map((item) => (
-                <li className="mb-2">
+                <li className="mb-2" key={item.label}>
                   <Link
                     href="#"
                     className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
@@ -62,7 +62,7 @@ const Footer = () => {
             <h6 className="text-gray-800 font-medium mb-2">COMPANY</h6>
             <ul className="text-sm">
               {footerCompanyList.map((item) => (
-                <li className="mb-2">
+                <li className="mb-2" key={item.label}>
                   <Link
                     href="#"
                     className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
@@ -78,7 +78,7 @@ const Footer = () => {
             <h6 className="text-gray-800 font-medium mb-2">INFO</h6>
             <ul className="text-sm">
               {footerInfoList.map((item) => (
-                <li className="mb-2">
+                <li className="mb-2" key={item.label}>
                   <Link
                     href="#"
                     className="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out"
