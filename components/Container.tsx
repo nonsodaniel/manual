@@ -2,10 +2,13 @@
 import LandingPage from "@/components/LandingPage";
 import Quiz from "@/components/quiz/Quiz";
 import { questions } from "@/lib/db";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Result from "./quiz/Result";
+import { DataContext } from "@/context/DataContext";
 
 const Container: React.FC = () => {
+  const { showQuiz } = useContext(DataContext);
+  console.log({ showQuiz });
   const questionsData: any = questions.questions;
   const [currentStep, setCurrentStep] = useState<number>(0);
   const [answers, setAnswers] = useState<Array<string | boolean>>([]);
@@ -40,9 +43,8 @@ const Container: React.FC = () => {
   };
 
   return (
-    <div className="home">
-      <LandingPage />
-      {renderCurrentStep()}
+    <div className="container">
+      {showQuiz ? renderCurrentStep() : <LandingPage />}
     </div>
   );
 };

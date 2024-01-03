@@ -1,10 +1,21 @@
+"use client";
 import Container from "@/components/Container";
-import React from "react";
+import { DataContext } from "@/context/DataContext";
+import React, { useState } from "react";
 
 const page = () => {
+  const [showQuiz, setShowQuiz] = useState<boolean>(false);
   return (
     <div>
-      <Container />
+      <DataContext.Provider
+        //@ts-ignore
+        value={{
+          showQuiz,
+          setShowQuiz,
+        }}
+      >
+        <Container />
+      </DataContext.Provider>
     </div>
   );
 };

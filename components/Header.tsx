@@ -1,20 +1,24 @@
+import { DataContext } from "@/context/DataContext";
 import Image from "next/image";
-import React from "react";
+import Link from "next/link";
+import React, { useContext } from "react";
 
 const Header = () => {
+  //@ts-ignore
+  const { setShowQuiz } = useContext(DataContext);
   return (
     <div className="top bg-green">
       <nav className="w-full px-8 text-gray-700 bg-white">
         <div className="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl">
           <div className="relative flex flex-col md:flex-row">
-            <a
+            <Link
               href="#_"
               className="flex items-center mb-5 font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0"
             >
               <span className="mx-auto text-xl font-black leading-none text-gray-900 select-none">
                 Manual<span className="text-indigo-600">.</span>
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
@@ -36,12 +40,13 @@ const Header = () => {
                   outside.
                 </p>
                 <div className="relative flex flex-col sm:flex-row sm:space-x-4">
-                  <a
+                  <Link
                     href="#_"
                     className="flex items-center px-6 py-3 text-gray-500 bg-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-600"
+                    onClick={(e) => setShowQuiz(true)}
                   >
                     TAKE THE QUIZ
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
