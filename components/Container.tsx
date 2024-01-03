@@ -38,7 +38,7 @@ const Container: React.FC = () => {
         />
       );
     } else {
-      return <Result answers={answers} />;
+      return <Result answers={answers} questionsData={questionsData} />;
     }
   };
 
