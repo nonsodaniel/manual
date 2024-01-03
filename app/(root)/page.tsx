@@ -1,15 +1,12 @@
-import About from "@/components/About";
-import Container from "@/components/Container";
-import Footer from "@/components/Footer";
+"use client";
+import LandingPage from "@/components/LandingPage";
+import Quiz from "@/components/quiz/Quiz";
 
 const Home = async () => {
   return (
     <div className="">
-      <Container />
-
-      <About />
-
-      <Footer />
+      <LandingPage />
+      <Quiz />
     </div>
   );
 };
