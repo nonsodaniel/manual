@@ -1,14 +1,12 @@
-"use client";
-import LandingPage from "@/components/LandingPage";
-import Quiz from "@/components/quiz/Quiz";
+import Container from "@/components/Container";
+import React from "react";
 
-const Home = async () => {
+const page = () => {
   return (
-    <div className="">
-      <LandingPage />
-      <Quiz />
+    <div>
+      <Container />
     </div>
   );
 };
 
-export default Home;
+export default page;
