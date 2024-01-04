@@ -1,5 +1,5 @@
 import { Question, QuizOption } from "@/lib/types";
-import React from "react";
+
 import Logo from "../Logo";
 
 interface ResultsPageProps {
@@ -8,7 +8,7 @@ interface ResultsPageProps {
 }
 
 const Result: React.FC<ResultsPageProps> = ({ answers }) => {
-  const isRejectionCondition = answers.some((answer) => {
+  const isRejectionCondition = answers?.some((answer) => {
     return answer.isRejection;
   });
 
@@ -44,12 +44,12 @@ const Result: React.FC<ResultsPageProps> = ({ answers }) => {
   return (
     <div className="container" data-testid="result-page">
       <div className="logo py-8 flex justify-center">
-        <Logo />
+        <Logo resetQuestion />
       </div>
 
       <div className="results-page flex  justify-center" data-test>
-        <div className="bg-white p-8 rounded shadow-md my-8">
-          <h1 className="text-center text-4xl py-5">Quiz Results</h1>
+        <div className="bg-white p-8 rounded shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] my-8">
+          <h1 className="text-center text-4xl py-5">Quiz Result</h1>
           <div className="text-lg">{getResultMessage()}</div>
         </div>
       </div>

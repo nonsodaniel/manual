@@ -15,15 +15,13 @@ interface QuestionsData {
 const Container: React.FC = () => {
   const { data } = useFetch<QuestionsData>("/api");
 
-  const context = useContext(DataContext);
-  const [currentStep, setCurrentStep] = useState<number>(0);
-  const [answers, setAnswers] = useState<Array<QuizOption>>([]);
-  const showQuiz = context?.showQuiz || false;
+  const { showQuiz, currentStep, setCurrentStep, setAnswers, answers } =
+    useContext(DataContext);
 
   const handleAnswer = (answer: QuizOption) => {
-    const updatedAnswers = [...answers];
+    const updatedAnswers = [...answers!];
     updatedAnswers[currentStep] = answer;
-    setAnswers(updatedAnswers);
+    setAnswers?.(updatedAnswers);
     setCurrentStep(currentStep + 1);
   };
 
@@ -48,9 +46,8 @@ const Container: React.FC = () => {
           currentStep={currentStep}
         />
       );
-    } else {
-      return <Result answers={answers} questionsData={questionsData} />;
     }
+    return <Result answers={answers} questionsData={questionsData} />;
   };
 
   return <div>{showQuiz ? renderCurrentStep() : <LandingPage />}</div>;
