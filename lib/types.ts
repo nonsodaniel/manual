@@ -1,11 +1,11 @@
 export interface Question {
   question: string;
   type: string;
-  options: Option[];
+  options: QuizOption[];
 }
 
-interface Option {
+export interface QuizOption {
   display: string;
-  value: string;
+  value: string | boolean;
   isRejection: boolean;
 }
