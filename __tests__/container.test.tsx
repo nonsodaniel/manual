@@ -4,10 +4,19 @@ import "@testing-library/jest-dom";
 import Container from "@/components/Container";
 import { DataContext } from "@/context/DataContext";
 
+const obj = {
+  showQuiz: true,
+  setShowQuiz: jest.fn(),
+  answers: [],
+  setAnswers: jest.fn(),
+  currentStep: 0,
+  setCurrentStep: jest.fn(),
+};
+
 describe("Container Component", () => {
   test("renders LandingPage when showQuiz is false", () => {
     render(
-      <DataContext.Provider value={{ showQuiz: false, setShowQuiz: jest.fn() }}>
+      <DataContext.Provider value={{ ...obj, showQuiz: false }}>
         <Container />
       </DataContext.Provider>
     );
@@ -16,22 +25,9 @@ describe("Container Component", () => {
     expect(screen.queryByTestId("result-page")).not.toBeInTheDocument();
   });
 
-  test("renders Result when showQuiz is true and currentStep is not < questionsData.length", () => {
-    const mockData = {
-      questions: [
-        { question: "Question 1", type: "Type 1", options: [] },
-        { question: "Question 2", type: "Type 2", options: [] },
-      ],
-    };
-
+  test("renders Result component", () => {
     render(
-      <DataContext.Provider
-        value={{
-          showQuiz: true,
-          setShowQuiz: jest.fn(),
-          questionsData: mockData.questions,
-        }}
-      >
+      <DataContext.Provider value={{ ...obj, showQuiz: true }}>
         <Container />
       </DataContext.Provider>
     );
