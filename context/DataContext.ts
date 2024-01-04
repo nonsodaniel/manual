@@ -1,3 +1,8 @@
-import { createContext } from "react";
+import { createContext, Dispatch, SetStateAction } from "react";
 
-export const DataContext = createContext(null);
+interface DataContextProps {
+  showQuiz: boolean;
+  setShowQuiz: Dispatch<SetStateAction<boolean>>;
+}
+
+export const DataContext = createContext<DataContextProps | null>(null);

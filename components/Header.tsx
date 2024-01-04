@@ -4,8 +4,9 @@ import React, { useContext } from "react";
 import Logo from "./Logo";
 
 const Header = () => {
-  //@ts-ignore
-  const { setShowQuiz } = useContext(DataContext);
+  const context = useContext(DataContext);
+  const setShowQuiz = context?.setShowQuiz;
+
   return (
     <div className="bg-[#a4b59e]">
       <nav className="w-full max-w-6xl mx-auto  ">
@@ -22,7 +23,7 @@ const Header = () => {
       </nav>
 
       <div
-        className="w-full bg-no-repeat bg-cover h-[100%] "
+        className="w-full bg-no-repeat bg-cover h-[100%]"
         style={{ backgroundImage: 'url("/assets/img/hero.svg")' }}
       >
         <section className="md:px-0 h-[35rem] w-full max-w-6xl mx-auto px-2">
@@ -46,7 +47,7 @@ const Header = () => {
                   <Link
                     href="#_"
                     className="flex items-center px-6 py-3 text-xs text-white bg-red-900 "
-                    onClick={(e) => setShowQuiz(true)}
+                    onClick={(e) => setShowQuiz?.(true)}
                   >
                     TAKE THE QUIZ
                   </Link>

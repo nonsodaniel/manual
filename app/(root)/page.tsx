@@ -8,7 +8,6 @@ const page = () => {
   return (
     <div>
       <DataContext.Provider
-        //@ts-ignore
         value={{
           showQuiz,
           setShowQuiz,
