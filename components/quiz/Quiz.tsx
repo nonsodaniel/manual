@@ -44,7 +44,7 @@ const Quiz: React.FC<QuizProps> = ({
   const isBtnEnabled = answers.length !== 0 && currentStep !== 0;
 
   return (
-    <div className="container quiz bg-white p-8  my-8">
+    <div className="container quiz bg-white p-8  my-8" data-testid="quiz-page">
       <h1 className="text-center text-4xl py-5">Manual Quiz</h1>
       <h2 className="text-2xl font-normal mb-4" data-testid="quiz-question">
         {question.question}
@@ -63,7 +63,7 @@ const Quiz: React.FC<QuizProps> = ({
               className={`bg-blue-500 text-white py-2 px-4 rounded ${
                 answer === option.value ? "bg-green-300" : ""
               }`}
-              data-testid="quiz-btn-option"
+              data-testid={`quiz-btn-option-${index + 1}`}
             >
               {renderOptionContent(option.display)}
             </button>
