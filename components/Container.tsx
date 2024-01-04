@@ -1,22 +1,28 @@
 "use client";
 import LandingPage from "@/components/LandingPage";
 import Quiz from "@/components/quiz/Quiz";
-import { questions } from "@/lib/db";
+
 import React, { useContext, useState } from "react";
 import Result from "./quiz/Result";
 import { DataContext } from "@/context/DataContext";
+import { Question, QuizOption } from "@/lib/types";
+import useFetch from "@/hooks/useFetch";
+
+interface QuestionsData {
+  questions: Question[] | null;
+}
 
 const Container: React.FC = () => {
-  const { showQuiz } = useContext(DataContext);
-  console.log({ showQuiz });
-  const questionsData: any = questions.questions;
-  const [currentStep, setCurrentStep] = useState<number>(0);
-  const [answers, setAnswers] = useState<Array<string | boolean>>([]);
+  const { data } = useFetch<QuestionsData>("/api");
 
-  const handleAnswer = (answer: string | boolean) => {
+  const context = useContext(DataContext);
+  const [currentStep, setCurrentStep] = useState<number>(0);
+  const [answers, setAnswers] = useState<Array<QuizOption>>([]);
+  const showQuiz = context?.showQuiz || false;
+
+  const handleAnswer = (answer: QuizOption) => {
     const updatedAnswers = [...answers];
     updatedAnswers[currentStep] = answer;
-    console.log({ updatedAnswers, answer });
     setAnswers(updatedAnswers);
     setCurrentStep(currentStep + 1);
   };
@@ -27,14 +33,19 @@ const Container: React.FC = () => {
     }
   };
 
+  const questionsData = data?.questions || [];
+
   const renderCurrentStep = () => {
     if (currentStep < questionsData.length) {
+      const question = questionsData[currentStep];
       return (
         <Quiz
-          question={questionsData[currentStep]}
-          answer={answers[currentStep]}
+          question={question}
+          answer={answers[currentStep]?.value}
           onAnswer={handleAnswer}
           onBack={handleBack}
+          answers={answers}
+          currentStep={currentStep}
         />
       );
     } else {
@@ -42,11 +53,7 @@ const Container: React.FC = () => {
     }
   };
 
-  return (
-    <div className="container">
-      {showQuiz ? renderCurrentStep() : <LandingPage />}
-    </div>
-  );
+  return <div>{showQuiz ? renderCurrentStep() : <LandingPage />}</div>;
 };
 
 export default Container;

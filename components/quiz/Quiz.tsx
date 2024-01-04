@@ -1,16 +1,8 @@
-import { QuizOption } from "@/lib/types";
+import { Question, QuizOption } from "@/lib/types";
 import React from "react";
 
 interface QuizProps {
-  question: {
-    question: string;
-    type: string;
-    options: {
-      display: string;
-      value: string | boolean;
-      isRejection: boolean;
-    }[];
-  };
+  question: Question;
   answer: string | boolean;
   answers: Array<QuizOption>;
   currentStep: number;

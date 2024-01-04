@@ -8,15 +8,12 @@ function useFetch<T>(urlString: string) {
   useEffect(() => {
     const fetchApiData = async () => {
       try {
-        const response = await fetch(urlString, {
-          method: "GET",
-        });
-        const json = await response;
-        console.log("nonso", { json });
-        // setData(json);
+        const response = await fetch(urlString);
+        const json = await response.json();
+
+        setData(json);
         setLoading(false);
       } catch (error) {
-        console.log(error);
         setError("An error occured, kindly retry");
         setLoading(false);
       }
