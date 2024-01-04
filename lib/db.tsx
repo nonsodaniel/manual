@@ -98,3 +98,9 @@ export const questions = {
     },
   ],
 };
+
+export const footerSocialLogos = [
+  { label: "fb", path: "/assets/img/logo-fb.svg" },
+  { label: "google", path: "/assets/img/google.svg" },
+  { label: "twitter", path: "/assets/img/twitter.svg" },
+];
