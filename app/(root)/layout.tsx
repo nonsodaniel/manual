@@ -1,12 +1,15 @@
 import "../globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Lato } from "next/font/google";
 
 export const metadata: Metadata = {
   title: "Manual",
   description: "Health Platform for men",
 };
-const inter = Inter({ subsets: ["latin"] });
+const inter = Lato({
+  weight: ["300", "400", "700", "900"],
+  subsets: ["latin"],
+});
 
 export default function RootLayout({
   children,
