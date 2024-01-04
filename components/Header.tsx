@@ -1,48 +1,51 @@
 import { DataContext } from "@/context/DataContext";
-import Image from "next/image";
 import Link from "next/link";
 import React, { useContext } from "react";
+import Logo from "./Logo";
 
 const Header = () => {
   //@ts-ignore
   const { setShowQuiz } = useContext(DataContext);
   return (
-    <div className="top bg-green">
-      <nav className="w-full px-8 text-gray-700 bg-white">
-        <div className="container flex flex-col flex-wrap items-center justify-between py-5 mx-auto md:flex-row max-w-7xl">
-          <div className="relative flex flex-col md:flex-row">
+    <div className="bg-[#a4b59e]">
+      <nav className="w-full max-w-6xl mx-auto  ">
+        <div className="container h-[100%] py-5">
+          <div className="relative flex flex-col md:flex-row  ">
             <Link
               href="#_"
-              className="flex items-center mb-5 font-medium text-gray-900 lg:w-auto lg:items-center lg:justify-center md:mb-0"
+              className=" mb-5 lg:w-auto lg:items-center lg:justify-center md:mb-0"
             >
-              <span className="mx-auto text-xl font-black leading-none text-gray-900 select-none">
-                Manual<span className="text-indigo-600">.</span>
-              </span>
+              <Logo />
             </Link>
           </div>
         </div>
       </nav>
 
-      <section className="px-2 py-32 bg-white md:px-0">
-        <div className="container items-center max-w-6xl px-8 mx-auto xl:px-5">
-          <div className="flex flex-wrap items-center sm:-mx-3">
-            <div className="w-full md:w-1/2 md:px-3">
-              <div className="w-full pb-6 space-y-6 sm:max-w-md lg:max-w-lg md:space-y-4 lg:space-y-8 xl:space-y-9 sm:pr-5 lg:pr-0 md:pb-0">
-                <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-4xl lg:text-5xl xl:text-6xl">
-                  <span className="block xl:inline">Be good</span>
-                  <span className="block text-indigo-600 xl:inline">
-                    To yourself
-                  </span>
+      <div
+        className="w-full bg-no-repeat bg-cover h-[100%] "
+        style={{ backgroundImage: 'url("/hero.svg")' }}
+      >
+        <section className="md:px-0 h-[35rem] w-full max-w-6xl mx-auto px-2">
+          <div className="container h-[100%] items-center mx-auto xl:px-5">
+            <div className="flex flex-wrap sm:-mx-3 h-[100%]">
+              <div className="w-full md:w-1/2 md:px-3 flex flex-col justify-center">
+                <h1 className="flex flex-col  tracking-tight ">
+                  <p className="text-[4rem] text-7xl   text-[#0b3b3c]">
+                    Be good
+                  </p>
+                  <p className="text-[4rem] text-7xl text-[#0b3b3c]">
+                    to yourself
+                  </p>
                 </h1>
-                <p className="mx-auto text-base text-gray-500 sm:max-w-md lg:text-xl md:max-w-3xl">
+                <p className=" py-5 sm:max-w-md text-base md:max-w-3xl font-light text-[#0b3b3c]">
                   We are working round the clock to bring you a hoistic
                   approcach to your wellness. From top to boottom,inside and
                   outside.
                 </p>
-                <div className="relative flex flex-col sm:flex-row sm:space-x-4">
+                <div className="relative flex flex-row sm:space-x-4 py-5">
                   <Link
                     href="#_"
-                    className="flex items-center px-6 py-3 text-gray-500 bg-gray-100 rounded-md hover:bg-gray-200 hover:text-gray-600"
+                    className="flex items-center px-6 py-3 text-xs text-white bg-red-900 "
                     onClick={(e) => setShowQuiz(true)}
                   >
                     TAKE THE QUIZ
@@ -50,19 +53,9 @@ const Header = () => {
                 </div>
               </div>
             </div>
-            <div className="w-full md:w-1/2">
-              <div className="w-full h-auto overflow-hidden rounded-md shadow-xl sm:rounded-xl">
-                <Image
-                  src="/file_fav.png"
-                  alt="Some-img"
-                  width={100}
-                  height={500}
-                />
-              </div>
-            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 };

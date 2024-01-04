@@ -5,56 +5,71 @@ import React from "react";
 
 const About = () => {
   return (
-    <section className="w-full bg-white pt-7 pb-7 md:pt-20 md:pb-24">
-      <p className="text-center">What we can help with</p>
-      <div className="box-border flex flex-col items-center content-center px-8 mx-auto leading-6 text-black border-0 border-gray-300 border-solid md:flex-row max-w-7xl lg:px-16">
-        <div className="box-border relative w-full max-w-md px-4 mt-5 mb-4 -ml-5 text-center bg-no-repeat bg-contain border-solid md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10">
-          <Image
-            className="p-2 pl-6 pr-5 xl:pl-16 xl:pr-20 "
-            src="/file_fav.png"
-            alt="Some-img"
-            width={350}
-            height={700}
-            style={{ objectFit: "contain" }}
-          />
+    <section className="w-full bg-white pt-7 pb-7 md:pt-20 md:pb-24 ">
+      <h1 className="text-center text-2xl font-bold text-[#0b3b3c] my-12">
+        What we can help with
+      </h1>
+      <div
+        className="flex flex-col items-center content-center px-8
+       mx-auto leading-6 border-gray-400  md:mb-12 mb-48
+        md:flex-row lg:max-w-4xl max-w-5xl lg:px-16 h-[25rem] md:h-auto "
+      >
+        <div
+          className="relative w-full h-[100%]  max-w-md px-4 mt-5 mb-4 
+         text-center md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10"
+        >
+          <div className="flex justify-center max-w-md h-[100%]">
+            <Image
+              className="p-2   "
+              src="/about-1.svg"
+              alt="Some-img"
+              width={0}
+              height={0}
+              sizes="100vh"
+              style={{ width: "90%", height: "100%" }}
+            />
+          </div>
         </div>
 
-        <div className="box-border order-first w-full text-black border-solid md:w-1/2 md:pl-10 md:order-none">
-          <h2 className="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl">
-            Hair Loss
-          </h2>
-          <p className="pt-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-12 xl:pr-32 lg:text-lg">
+        <div className="flex flex-col  justify-center w-full h-[100%]  text-[#0b3b3c]  md:w-1/3  ">
+          <h6 className="m-0 font-light leading-tight text-xs ">Hair Loss</h6>
+          <h5 className="py-3 md:py-0 m-0 leading-7 font-bold ">
             Hair loss needn’t be irreversible. We can help!
-          </p>
-          <p>
+          </h5>
+          <p className="text-xs font-light ">
             We’re working around the clock to bring you a holistic approach to
             your wellness. From top to bottom, inside and out.
           </p>
         </div>
       </div>
-      <div className="box-border flex flex-col items-center content-center px-8 mx-auto mt-2 leading-6 text-black border-0 border-gray-300 border-solid md:mt-20 xl:mt-0 md:flex-row max-w-7xl lg:px-16">
-        <div className="box-border w-full text-black border-solid md:w-1/2 md:pl-6 xl:pl-32">
-          <h2 className="m-0 text-xl font-semibold leading-tight border-0 border-gray-300 lg:text-3xl md:text-2xl">
-            Erecetile dysfunction
-          </h2>
-          <h5 className="h5t-4 pb-8 m-0 leading-7 text-gray-700 border-0 border-gray-300 sm:pr-10 lg:text-lg">
+
+      <div
+        className="flex flex-col-reverse items-center content-center px-8
+       mx-auto leading-6 border-0 my-4
+        md:flex-row lg:max-w-4xl max-w-5xl lg:px-16 min-h-[25rem] md:h-auto"
+      >
+        <div className="flex flex-col md:order-1  justify-center w-full h-[100%] text-[#0b3b3c]  md:w-1/3  ">
+          <h6 className="m-0 font-light text-xs ">Erecetile dysfunction</h6>
+          <h5 className="py-3 md:py-0 m-0 leading-7 font-bold lg:text-lg ">
             Erections can be a tricky thing. But no need to feel down!
           </h5>
-          <h6>
+          <p className="text-xs font-light ">
             We’re working around the clock to bring you a holistic approach to
             your wellness. From top to bottom, inside and out.
-          </h6>
+          </p>
         </div>
-
-        <div className="box-border relative w-full max-w-md px-4 mt-10 mb-4 text-center bg-no-repeat bg-contain border-solid md:mt-0 md:max-w-none lg:mb-0 md:w-1/2">
-          <Image
-            className="pl-4 sm:pr-10 xl:pl-10 lg:pr-32"
-            src="/file_fav.png"
-            alt="Some-img"
-            width={350}
-            height={700}
-            style={{ objectFit: "contain" }}
-          />
+        <div className="relative w-full h-[100%] md:order-2  max-w-md px-4 mt-5 mb-4  text-center md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10">
+          <div className="flex justify-center max-w-md h-[100%]">
+            <Image
+              className="p-2   "
+              src="/about-2.svg"
+              alt="Some-img"
+              width={0}
+              height={0}
+              sizes="100vh"
+              style={{ width: "90%", height: "100%" }}
+            />
+          </div>
         </div>
       </div>
     </section>
