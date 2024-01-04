@@ -6,7 +6,7 @@ import Footer from "./Footer";
 
 const LandingPage = () => {
   return (
-    <div className="landing-page">
+    <div className="landing-page" data-testid="landing-page">
       <Header />
       <About />
       <Footer />

@@ -42,12 +42,12 @@ const Result: React.FC<ResultsPageProps> = ({ answers }) => {
   };
 
   return (
-    <div className="container">
+    <div className="container" data-testid="result-page">
       <div className="logo py-8 flex justify-center">
         <Logo />
       </div>
 
-      <div className=" results-page flex  justify-center">
+      <div className="results-page flex  justify-center" data-test>
         <div className="bg-white p-8 rounded shadow-md my-8">
           <h1 className="text-center text-4xl py-5">Quiz Results</h1>
           <div className="text-lg">{getResultMessage()}</div>
