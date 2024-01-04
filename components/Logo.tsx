@@ -2,9 +2,9 @@ import { DataContext } from "@/context/DataContext";
 import Image from "next/image";
 import React, { useContext } from "react";
 
-const Logo = () => {
-  const context = useContext(DataContext);
-  const setShowQuiz = context?.setShowQuiz;
+const Logo = ({ resetQuestion }: { resetQuestion?: boolean }) => {
+  const { setCurrentStep, setShowQuiz, setAnswers } = useContext(DataContext);
+
   return (
     <div className="h-12 w-10">
       <Image
@@ -14,7 +14,13 @@ const Logo = () => {
         width={100}
         height={100}
         style={{ objectFit: "contain" }}
-        onClick={() => setShowQuiz?.(false)}
+        onClick={() => {
+          if (resetQuestion) {
+            setCurrentStep(0);
+            setShowQuiz(false);
+            setAnswers([]);
+          }
+        }}
       />
     </div>
   );
