@@ -23,7 +23,7 @@ const Header = () => {
 
       <div
         className="w-full bg-no-repeat bg-cover h-[100%] "
-        style={{ backgroundImage: 'url("/hero.svg")' }}
+        style={{ backgroundImage: 'url("/assets/img/hero.svg")' }}
       >
         <section className="md:px-0 h-[35rem] w-full max-w-6xl mx-auto px-2">
           <div className="container h-[100%] items-center mx-auto xl:px-5">

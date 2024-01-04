@@ -20,9 +20,9 @@ const About = () => {
         >
           <div className="flex justify-center max-w-md h-[100%]">
             <Image
-              className="p-2   "
-              src="/about-1.svg"
-              alt="Some-img"
+              className="p-2"
+              src="/assets/img/about-1.svg"
+              alt="Hair-treatement-img"
               width={0}
               height={0}
               sizes="100vh"
@@ -62,8 +62,8 @@ const About = () => {
           <div className="flex justify-center max-w-md h-[100%]">
             <Image
               className="p-2   "
-              src="/about-2.svg"
-              alt="Some-img"
+              src="/assets/img/about-2.svg"
+              alt="erection-img"
               width={0}
               height={0}
               sizes="100vh"
