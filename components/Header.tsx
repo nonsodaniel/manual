@@ -13,7 +13,7 @@ const Header = () => {
         <div className="container h-[100%] py-5">
           <div className="relative flex flex-col md:flex-row  ">
             <Link
-              href="#_"
+              href="#"
               className=" mb-5 lg:w-auto lg:items-center lg:justify-center md:mb-0"
             >
               <Logo />
@@ -45,7 +45,7 @@ const Header = () => {
                 </p>
                 <div className="relative flex flex-row sm:space-x-4 py-5">
                   <Link
-                    href="#_"
+                    href="#"
                     className="flex items-center px-6 py-3 text-xs text-white bg-red-900 "
                     onClick={(e) => setShowQuiz?.(true)}
                   >
