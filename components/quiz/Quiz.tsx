@@ -51,7 +51,7 @@ const Quiz: React.FC<QuizProps> = ({
       </div>
 
       <div
-        className="container quiz bg-white p-8 lg:w-[800px] w-full shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]"
+        className="container quiz bg-white my-10 p-8  lg:w-[800px] w-full shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px]"
         data-testid="quiz-page "
       >
         <h1 className="text-center text-4xl py-5">Manual Quiz</h1>

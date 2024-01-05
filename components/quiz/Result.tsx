@@ -47,10 +47,13 @@ const Result: React.FC<ResultsPageProps> = ({ answers }) => {
         <Logo resetQuestion />
       </div>
 
-      <div className="results-page flex  justify-center" data-test>
+      <div
+        className="results-page flex  justify-center items-center mx-auto lg:w-[800px] w-full"
+        data-test
+      >
         <div className="bg-white p-8 rounded shadow-[rgba(17,_17,_26,_0.1)_0px_0px_16px] my-8">
           <h1 className="text-center text-4xl py-5">Quiz Result</h1>
-          <div className="text-lg">{getResultMessage()}</div>
+          <div className="text-lg text-center">{getResultMessage()}</div>
         </div>
       </div>
     </div>
