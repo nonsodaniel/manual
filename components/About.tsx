@@ -24,8 +24,8 @@ const About = () => {
             >
               <div className="box-1 flex items-center relative md:h-[445px] h-[100%] md:w-[370px] w-[100%]">
                 <Image
-                  className={`p-2 absolute right-[-75px]  h-[445px] w-[370px] hidden md:block ${
-                    isOddNumber ? "right-60 mr-8" : "left-28"
+                  className={`p-2 absolute   h-[445px] w-[370px] hidden md:block ${
+                    isOddNumber ? "left-[-17rem] mr-8" : "right-[-105px]"
                   } `}
                   src={o.numberImgPath}
                   alt="number-img"
