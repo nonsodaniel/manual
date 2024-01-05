@@ -1,3 +1,5 @@
+import { MediaContent, PageContent } from "./types";
+
 export const footerProductList = [
   { label: "Popular" },
   { label: "Trending" },
@@ -99,8 +101,23 @@ export const questions = {
   ],
 };
 
-export const footerSocialLogos = [
+export const footerSocialLogos: MediaContent[] = [
   { label: "fb", path: "/assets/img/logo-fb.svg" },
   { label: "google", path: "/assets/img/google.svg" },
   { label: "twitter", path: "/assets/img/twitter.svg" },
+];
+
+export const aboutPageContent: PageContent[] = [
+  {
+    label: "Hair loss",
+    heading: "Hair loss needn’t be irreversible. We can help! ",
+    description:
+      "We’re working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.",
+  },
+  {
+    label: "Erecetile dysfunction",
+    heading: "Erections can be a tricky thing. But no need to feel down!",
+    description:
+      "We’re working around the clock to bring you a holistic approach toyour wellness. From top to bottom, inside and out.",
+  },
 ];
