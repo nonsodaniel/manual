@@ -81,7 +81,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className="text-center py-5">
+      <p className="text-center py-5 font-light">
         {new Date().getFullYear()} Manual. All rights reserved
       </p>
     </footer>

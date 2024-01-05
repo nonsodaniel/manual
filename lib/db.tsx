@@ -113,11 +113,15 @@ export const aboutPageContent: PageContent[] = [
     heading: "Hair loss needn’t be irreversible. We can help! ",
     description:
       "We’re working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.",
+    aboutImgPath: "/assets/img/about-1.svg",
+    numberImgPath: "/assets/img/01.svg",
   },
   {
     label: "Erecetile dysfunction",
     heading: "Erections can be a tricky thing. But no need to feel down!",
     description:
       "We’re working around the clock to bring you a holistic approach toyour wellness. From top to bottom, inside and out.",
+    aboutImgPath: "/assets/img/about-2.svg",
+    numberImgPath: "/assets/img/02.svg",
   },
 ];

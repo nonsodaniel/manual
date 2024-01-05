@@ -17,6 +17,8 @@ interface Label {
 export interface PageContent extends Label {
   heading: string;
   description: string;
+  numberImgPath: string;
+  aboutImgPath: string;
 }
 
 export interface MediaContent extends Label {

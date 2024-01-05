@@ -7,12 +7,12 @@ import React from "react";
 const About = () => {
   return (
     <section className="w-full bg-white pt-7 pb-7 md:pt-20 md:pb-24 ">
-      <h1 className="text-center text-2xl font-bold text-[#0b3b3c] md:my-0 my-12">
+      <h1 className="text-center text-2xl font-normal text-[#0b3b3c] md:my-0 my-12">
         What we can help with
       </h1>
       <div className="overflow-hidden min-h-[625px]">
         {aboutPageContent.map((o, index) => {
-          const isOddNumber = index % 2 === 1;
+          const isOddNumber = index % 2 !== 1;
           return (
             <div
               key={o.label + index}
@@ -24,16 +24,21 @@ const About = () => {
             >
               <div className="box-1 flex items-center relative md:h-[445px] h-[100%] md:w-[370px] w-[100%]">
                 <Image
-                  className="p-2 absolute right-[-75px]  h-[445px] w-[370px] hidden md:block"
-                  src="/assets/img/02.svg"
-                  alt="erection-img"
+                  className={`p-2 absolute right-[-75px]  h-[445px] w-[370px] hidden md:block ${
+                    isOddNumber ? "right-60 mr-8" : "left-28"
+                  } `}
+                  src={o.numberImgPath}
+                  alt="number-img"
                   width={0}
                   height={0}
                   sizes="100vh"
                 />
                 <div
-                  className="relative flex flex-col md:order-1 
-                  justify-center md:h-[257px] h-[100%] md:w-[359px] w-[inherit] p md:px-4 px-0 z-[1] text-[#0b3b3c] "
+                  className={`relative flex flex-col md:order-1 
+                  justify-center md:h-[257px] h-[100%] md:w-[359px]
+                   w-[inherit] p md:px-4 px-0 z-[1] text-[#5c8b8b] ${
+                     isOddNumber && "md:ml-[-10rem] ml-0 "
+                   }`}
                 >
                   <h6 className="m-0 font-light md:text-xs text-md underline md:no-underline">
                     {o.label}
@@ -46,11 +51,18 @@ const About = () => {
                   </p>
                 </div>
               </div>
-              <div className="relative  md:min-h-[445px] min-w-[370px] min-h-[1rem] box-2 max-w-[200px] md:max-w-fit">
+              <div
+                className={`relative  md:min-h-[445px] min-w-[370px]
+               min-h-[1rem] box-2 max-w-[200px] md:max-w-fit ${
+                 isOddNumber && "md:mr-36 mr-0"
+               }`}
+              >
                 <div className="flex justify-center max-w-md h-[100%]">
                   <Image
-                    className="p-2 md:h-[445px] w-[270px] h-[100%]"
-                    src="/assets/img/about-2.svg"
+                    className={`p-2 md:h-[445px] w-[270px] h-[100%] ${
+                      isOddNumber ? "md:ml-[-3rem] ml-0" : "ml-0"
+                    }`}
+                    src={o.aboutImgPath}
                     alt="erection-img"
                     width={0}
                     height={0}
