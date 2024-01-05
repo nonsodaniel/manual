@@ -27,7 +27,9 @@ const Footer = () => {
             <ul className="text-sm">
               {footerProductList.map((item) => (
                 <li className="mb-2" key={item.label}>
-                  <Link href="#">{item.label}</Link>
+                  <Link href="#" className="font-light">
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -38,7 +40,9 @@ const Footer = () => {
             <ul className="text-sm">
               {footerCompanyList.map((item) => (
                 <li className="mb-2" key={item.label}>
-                  <Link href="#">{item.label}</Link>
+                  <Link href="#" className="font-light">
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -49,7 +53,9 @@ const Footer = () => {
             <ul className="text-sm">
               {footerInfoList.map((item) => (
                 <li className="mb-2" key={item.label}>
-                  <Link href="#">{item.label}</Link>
+                  <Link href="#" className="font-light">
+                    {item.label}
+                  </Link>
                 </li>
               ))}
             </ul>
