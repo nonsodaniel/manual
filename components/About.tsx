@@ -43,7 +43,7 @@ const About = () => {
                   <h6 className="m-0 font-light md:text-xs text-md underline md:no-underline">
                     {o.label}
                   </h6>
-                  <h5 className=" m-0  font-bold text-[1.5rem] leading-8 py-[0.8rem] px-0">
+                  <h5 className=" m-0   text-[1.5rem] leading-8 py-[0.8rem] px-0 font-medium text-[#0B3B3C]">
                     {o.heading}
                   </h5>
                   <p className="md:text-[.9rem] text-md  font-light ">

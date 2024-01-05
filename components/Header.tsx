@@ -34,7 +34,7 @@ const Header = () => {
                   <p className="text-[4rem] text-7xl   text-[#0b3b3c]">
                     Be good
                   </p>
-                  <p className="text-[4rem] text-7xl text-[#0b3b3c]">
+                  <p className="text-[4rem] text-7xl text-[#0b3b3c] font-normal">
                     to yourself
                   </p>
                 </h1>
