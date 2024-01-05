@@ -1,76 +1,66 @@
 "use client";
 
+import { aboutPageContent } from "@/lib/db";
 import Image from "next/image";
 import React from "react";
 
 const About = () => {
   return (
     <section className="w-full bg-white pt-7 pb-7 md:pt-20 md:pb-24 ">
-      <h1 className="text-center text-2xl font-bold text-[#0b3b3c] my-12">
+      <h1 className="text-center text-2xl font-bold text-[#0b3b3c] md:my-0 my-12">
         What we can help with
       </h1>
-      <div
-        className="flex flex-col items-center content-center px-8
-       mx-auto leading-6 border-gray-400  md:mb-12 mb-48
-        md:flex-row lg:max-w-4xl max-w-5xl lg:px-16 h-[25rem] md:h-auto "
-      >
-        <div
-          className="relative w-full h-[100%]  max-w-md px-4 mt-5 mb-4 
-         text-center md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10"
-        >
-          <div className="flex justify-center max-w-md h-[100%]">
-            <Image
-              className="p-2"
-              src="/assets/img/about-1.svg"
-              alt="Hair-treatement-img"
-              width={0}
-              height={0}
-              sizes="100vh"
-              style={{ width: "90%", height: "100%" }}
-            />
-          </div>
-        </div>
-
-        <div className="flex flex-col  justify-center w-full h-[100%]  text-[#0b3b3c]  md:w-1/3  ">
-          <h6 className="m-0 font-light leading-tight text-xs ">Hair Loss</h6>
-          <h5 className="py-3 md:py-0 m-0 leading-7 font-bold ">
-            Hair loss needn’t be irreversible. We can help!
-          </h5>
-          <p className="text-xs font-light ">
-            We’re working around the clock to bring you a holistic approach to
-            your wellness. From top to bottom, inside and out.
-          </p>
-        </div>
-      </div>
-
-      <div
-        className="flex flex-col-reverse items-center content-center px-8
-       mx-auto leading-6 border-0 my-4
-        md:flex-row lg:max-w-4xl max-w-5xl lg:px-16 min-h-[25rem] md:h-auto"
-      >
-        <div className="flex flex-col md:order-1  justify-center w-full h-[100%] text-[#0b3b3c]  md:w-1/3  ">
-          <h6 className="m-0 font-light text-xs ">Erecetile dysfunction</h6>
-          <h5 className="py-3 md:py-0 m-0 leading-7 font-bold lg:text-lg ">
-            Erections can be a tricky thing. But no need to feel down!
-          </h5>
-          <p className="text-xs font-light ">
-            We’re working around the clock to bring you a holistic approach to
-            your wellness. From top to bottom, inside and out.
-          </p>
-        </div>
-        <div className="relative w-full h-[100%] md:order-2  max-w-md px-4 mt-5 mb-4  text-center md:ml-0 md:mt-0 md:max-w-none lg:mb-0 md:w-1/2 xl:pl-10">
-          <div className="flex justify-center max-w-md h-[100%]">
-            <Image
-              className="p-2   "
-              src="/assets/img/about-2.svg"
-              alt="erection-img"
-              width={0}
-              height={0}
-              sizes="100vh"
-              style={{ width: "90%", height: "100%" }}
-            />
-          </div>
-        </div>
+      <div className="overflow-hidden min-h-[625px]">
+        {aboutPageContent.map((o, index) => {
+          const isOddNumber = index % 2 === 1;
+          return (
+            <div
+              key={o.label + index}
+              className={`flex   ${
+                isOddNumber && "md:flex-row-reverse"
+              } items-center content-center 
+    px-8 md:mx-auto mx-0 leading-6 border-0 
+     lg:px-16 min-h-[25rem] md:h-auto md:w-[50%] w-[100%] md:flex-row flex-col md:mb-0 mb-16`}
+            >
+              <div className="box-1 flex items-center relative md:h-[445px] h-[100%] md:w-[370px] w-[100%]">
+                <Image
+                  className="p-2 absolute right-[-75px]  h-[445px] w-[370px] hidden md:block"
+                  src="/assets/img/02.svg"
+                  alt="erection-img"
+                  width={0}
+                  height={0}
+                  sizes="100vh"
+                />
+                <div
+                  className="relative flex flex-col md:order-1 
+                  justify-center md:h-[257px] h-[100%] md:w-[359px] w-[inherit] p md:px-4 px-0 z-[1] text-[#0b3b3c] "
+                >
+                  <h6 className="m-0 font-light md:text-xs text-md underline md:no-underline">
+                    {o.label}
+                  </h6>
+                  <h5 className=" m-0  font-bold text-[1.5rem] leading-8 py-[0.8rem] px-0">
+                    {o.heading}
+                  </h5>
+                  <p className="md:text-[.9rem] text-md  font-light ">
+                    {o.description}
+                  </p>
+                </div>
+              </div>
+              <div className="relative  md:min-h-[445px] min-w-[370px] min-h-[1rem] box-2 max-w-[200px] md:max-w-fit">
+                <div className="flex justify-center max-w-md h-[100%]">
+                  <Image
+                    className="p-2 md:h-[445px] w-[270px] h-[100%]"
+                    src="/assets/img/about-2.svg"
+                    alt="erection-img"
+                    width={0}
+                    height={0}
+                    sizes="100vh"
+                  />
+                </div>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
